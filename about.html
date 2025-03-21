@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Star Academy</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="about.css">  <!-- Link the new CSS file -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <!-- Logo with Home Link -->
+            <a href="index.html" class="logo-section">
+                <img src="logo.jpg" alt="Star Academy Logo" class="logo">
+            </a>
+    
+            <!-- Star Academy Title with Home Link -->
+            <a href="index.html" class="logo-title"> 
+                    <span class="line1">Star</span><br>
+                    <span class="line2">Academy</span>  
+            </a>
+
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html" class="active">About Us</a></li>
+                    <li><a href="courses.html">Courses</a></li>
+                    <li><a href="testimonials.html">Testimonials</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </nav>
+            <!-- Enroll Now -->
+            <button class="cta" id="openForm">Enroll Now</button>
+
+            <div id="formPopup" class="popup">
+                <div class="popup-content">
+                    <span class="close" id="closePopup">&times;</span>
+                    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScPzaj0pDpUdxjJp3XX7q7kGyzR68MQQM9MYlQJ6L4z3uP22g/viewform?embedded=true" 
+                            width="100%" height="500px" style="border:none;"></iframe>
+                </div>
+            </div>     
+        </div>
+    </header>  
+
+    <!-- About Us Section -->
+    <section class="about-section">
+        <div class="container">
+            <h2>About Star Academy</h2>
+            <p>Welcome to <strong>Star Academy</strong>, where excellence meets education! We are committed to providing top-quality education for students from Class 6 to 12, specializing in Mathematics, Science, and IIT-JEE preparation.</p>
+            
+            <h3>Why Choose Us?</h3>
+            <ul>
+                <li><i class="fas fa-check-circle"></i> Learn from IITian Faculties</li>
+                <li><i class="fas fa-check-circle"></i> Structured Curriculum for Class 6 to 12</li>
+                <li><i class="fas fa-check-circle"></i> Personalized Attention & Doubt Solving</li>
+                <li><i class="fas fa-check-circle"></i> Concept-Based Teaching (No Rote Learning!)</li>
+                <li><i class="fas fa-check-circle"></i> Regular Tests & Performance Analysis</li>
+            </ul>
+
+            <h3>Our Founders</h3>
+            <div class="founders">
+                <div class="founder-card">
+                    <img src="sudarshan_upper.jpeg" alt="Sudarshan Kumar">
+                    <h4>Sudarshan Kumar</h4>
+                    <p>Founder | IIT Kharagpur | IIM Calcutta</p>
+                </div>
+                <div class="founder-card">
+                    <img src="shweta_upper.jpeg" alt="Dr. Sweta Kumari">
+                    <h4>Dr. Sweta Kumari</h4>
+                    <p>Co-Founder | Medical Officer | Educator</p>
+                </div>
+            </div>
+
+            <h3>Our Mission</h3>
+            <p>We aim to empower students with conceptual clarity and problem-solving skills to help them excel in academics and competitive exams.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="contact-info">
+            <p>Address: A-12, Shop No-3, Dasrath Puri, New Delhi - 110045</p>
+            <p>Phone: +91 81024 38480 | Email: info@staracademy.com</p>
+        </div>
+        <div class="footer-bottom">
+            copyright © 2025 Star Academy. All rights reserved. Developed By Aditya Kumar
+        </div>
+    </footer>
+    <script src="enroll.js"></script>
+</body>
+</html>
