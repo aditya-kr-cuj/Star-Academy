@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Courses - Star Academy</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="courses.css">  <!-- Link the new CSS file -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <!-- Logo with Home Link -->
+            <a href="index.html" class="logo-section">
+                <img src="logo.jpg" alt="Star Academy Logo" class="logo">
+            </a>
+    
+            <!-- Star Academy Title with Home Link -->
+            <a href="index.html" class="logo-title"> 
+                    <span class="line1">Star</span><br>
+                    <span class="line2">Academy</span>  
+            </a>
+
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="courses.html" class="active">Course</a></li>
+                    <li><a href="testimonials.html">Testimonials</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </nav>
+            <!-- Enroll Now -->
+            <button class="cta" id="openForm">Enroll Now</button>
+
+            <div id="formPopup" class="popup">
+                <div class="popup-content">
+                    <span class="close" id="closePopup">&times;</span>
+                    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScPzaj0pDpUdxjJp3XX7q7kGyzR68MQQM9MYlQJ6L4z3uP22g/viewform?embedded=true" 
+                            width="100%" height="500px" style="border:none;"></iframe>
+                </div>
+            </div>     
+        </div>
+    </header>  
+    
+
+    <!-- Courses Section -->
+<section class="courses-section">
+    <div class="container">
+        <h2>Our Courses</h2>
+        <p>We offer high-quality courses for school students and IIT-JEE aspirants. Our courses are designed to strengthen conceptual understanding and problem-solving skills.</p>
+
+        <div class="course-grid">
+            <div class="course-card">
+                <h3>Foundation Classes (Class 6-10)</h3>
+                <p><strong>Subjects:</strong> Mathematics & Science</p>
+                <p><strong>Focus:</strong> Concept Building & Olympiad Preparation</p>
+                <button class="enroll-btn">Enroll Now</button>
+            </div>
+
+            <div class="course-card">
+                <h3>Class 11 (JEE Main & Advanced)</h3>
+                <p><strong>Subjects:</strong> Physics, Chemistry & Mathematics</p>
+                <p><strong>Focus:</strong> Strengthening Fundamentals & Problem Solving</p>
+                <button class="enroll-btn">Enroll Now</button>
+            </div>
+
+            <div class="course-card">
+                <h3>Class 12 (JEE Main & Advanced)</h3>
+                <p><strong>Subjects:</strong> Physics, Chemistry & Mathematics</p>
+                <p><strong>Focus:</strong> Advanced Problem-Solving & Exam Preparation</p>
+                <button class="enroll-btn">Enroll Now</button>
+            </div>
+
+            <div class="course-card">
+                <h3>Crash Course (IIT-JEE)</h3>
+                <p><strong>Subjects:</strong> PCM (Physics, Chemistry, Mathematics)</p>
+                <p><strong>Duration:</strong> 6-8 Months Intensive Coaching</p>
+                <button class="enroll-btn">Enroll Now</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Popup Form -->
+<div id="Popupform" class="popup">
+    <div class="popup-content">
+        <span class="close" id="Popupclose">&times;</span>
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScPzaj0pDpUdxjJp3XX7q7kGyzR68MQQM9MYlQJ6L4z3uP22g/viewform?embedded=true" 
+                width="100%" height="500px" style="border:none;"></iframe>
+    </div>
+</div>
+
+
+    <!-- Footer -->
+    <footer>
+        <div class="contact-info">
+            <p>Address: A-12, Shop No-3, Dasrath Puri, New Delhi - 110045</p>
+            <p>Phone: +91 81024 38480 | Email: info@staracademy.com</p>
+        </div>
+        <div class="footer-bottom">
+            copyright © 2025 Star Academy. All rights reserved. Developed By Aditya Kumar
+        </div>
+    </footer>
+    <script src="enroll.js"></script>
+    <script src="courses.js"></script>
+</body>
+</html>

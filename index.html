@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title >Star Academy</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <!-- Logo with Home Link -->
+            <a href="index.html" class="logo-section">
+                <img src="logo.jpg" alt="Star Academy Logo" class="logo">
+            </a>
+    
+            <!-- Star Academy Title with Home Link -->
+            <a href="index.html" class="logo-title"> 
+                    <span class="line1">Star</span><br>
+                    <span class="line2">Academy</span>  
+            </a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="courses.html">Courses</a></li>
+                    <!-- <li><a href="#resources">Resources</a></li> -->
+                    <li><a href="testimonials.html">Testimonials</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </nav>
+            <!-- Enroll Now -->
+            <button class="cta" id="openForm">Enroll Now</button>
+
+            <div id="formPopup" class="popup">
+                <div class="popup-content">
+                    <span class="close" id="closePopup">&times;</span>
+                    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScPzaj0pDpUdxjJp3XX7q7kGyzR68MQQM9MYlQJ6L4z3uP22g/viewform?embedded=true" 
+                            width="100%" height="500px" style="border:none;"></iframe>
+                </div>
+            </div>            
+            
+        </div>
+    </header>  
+<!-- Hero Section with Upcoming Batches & Offers -->
+<div class="hero">
+    <div class="hero-slider">
+        <div class="slides-container">
+            <div class="slide"><img src="Banner_1.png" alt="Upcoming Batches"></div>
+            <div class="slide"><img src="Banner_2.png" alt="Special Offer"></div>
+            <div class="slide"><img src="banner_3.png" alt="Top Faculty"></div>
+        </div>
+    </div>
+    <!-- Navigation Buttons -->
+    <button class="prev-btn">&#10094;</button>
+    <button class="next-btn">&#10095;</button>
+</div>
+    <!-- Teachers Section -->
+<section id="teachers">
+    <h2 class="section-title">Meet Our Teachers</h2>
+    <div class="profiles">
+        <!-- Teacher Profile Cards -->
+        <div class="profile-card" onclick="openTeacherModal('Sudarshan Kumar', 'sudarshan_inner.jpeg', 'An IIT Kharagpur and IIM Calcutta alumnus, Sudarshan Kumar brings 4+ years of teaching experience delivering top notch education and more than 7 years of working experience as a government officer and Data Scientist. With expertise in teaching Physics, he has developed techniques to teach Physics in an intuitive manner and help students learn effortlessly.')">
+            <img src="sudarshan_upper.jpeg" alt="Sudarshan Kumar" class="teacher-photo">
+            <h3>Sudarshan Kumar</h3>
+            <p>Founder, Star Academy </p>
+            <p>IIT Kharagpur (B.Tech)</p>
+            <p>IIM Culcutta (MBA)</p>
+        </div>
+        <div class="profile-card" onclick="openTeacherModal('Parijat Kumar', 'parijat_inner.jpeg', 'With over four years of teaching experience in premier institutes, I have mentored multiple IIT-JEE rankers with a unique approach—no rote memorization of formulas! Instead, I focus on building a deep, intuitive understanding by connecting concepts to real-world scenarios, making learning both effective and engaging.')">
+            <img src="parijat_upper.jpeg" alt="Parijat Kumar" class="teacher-photo">
+            <h3>Parijat Kumar</h3>
+            <p>Ex-Resonance Faculty</p>
+            <p>IIT-BHU (B.Tech)</p>
+            <p>IIM Culcutta (MBA)</p>
+        </div>
+        <div class="profile-card" onclick="openTeacherModal('Dr. Sweta Kumari', 'shweta_inner.jpeg', 'With over a 3 year experience in teaching and more than 6 years of experience in healthcare industry as a consultant physio and Medical Officer, Dr. Sweta Kumari brings along her passion for interactive teaching for students. Specialising in teaching Science (biology in particular) and Hindi, she has delivered impactful impressions on the students overall growth and learning. Dr. Sweta’s commitment to hands-on learning and practical problem- solving forms the core of Star Academy’s mission.')">
+            <img src="shweta_upper.jpeg" alt="Dr. Sweta" class="teacher-photo">
+            <h3>Dr. Sweta Kumari</h3>
+            <p>Founder, Star Academy </p>
+            <p>Bachelor of Physiotherapy (BPT)</p>
+            <p>Post Graduate Diploma In Hospital Management (PGDHM)</p>
+        </div>
+        <div class="profile-card" onclick="openTeacherModal('Vidisha Gupta', 'vidisha.jpeg', 'An experienced Physics educator, Vidisha Gupta has completed his M.Sc from Rajasthan University and holds a strong academic background from the prestigious Regional Institute of Education, NCERT. With teaching experience at DPS as a TGT faculty, he specializes in making complex Physics concepts simple and engaging for students.')">
+            <img src="vidisha.jpeg" alt="Vidisha Gupta" class="teacher-photo">
+            <h3>Vidisha Gupta</h3>
+            <p>Regional institute of Education, NCERT</p>
+            <p>Ex-DPS Faculty(TGT)</p>
+            <p>M. Sc (Physics)- Rajasthan University</p>
+        </div>
+    </div>
+</section>
+
+<!-- Teacher Modal -->
+<div id="teacherModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeTeacherModal()">×</span>
+        <img id="modalTeacherPhoto" class="modal-teacher-photo" src="" alt="Teacher Photo" onclick="openPhotoModal()">
+        <h2 id="modalTeacherName"></h2>
+        <p id="modalTeacherDetails"></p>
+    </div>
+</div>
+
+<!-- Full-Size Photo Modal -->
+<div id="photoModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closePhotoModal()">×</span>
+        <img id="fullSizePhoto" src="" alt="Full Size Teacher Photo" style="width: 100%; border-radius: 8px;">
+    </div>
+</div>
+
+<!-- Modal for Teacher Details -->
+<div id="teacherModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <h2 id="modalTeacherName"></h2>
+        <img id="modalTeacherPhoto" src="" alt="" class="modal-teacher-photo">
+        <p id="modalTeacherDetails"></p>
+    </div>
+</div>
+
+    <!-- Resources Section -->
+    <section id="video-library" class="partition fade-in">
+        <h2>Video Library</h2>
+        <p>Explore our YouTube lectures organized by class, subject, and chapter for a seamless learning experience.</p>
+        <div id="class-selector" class="selector-container">
+            <label for="classSelect">Select Class:</label>
+            <select id="classSelect" onchange="showSubjects()">
+                <option value="">Choose Class</option>
+                <!-- <option value="6">Class 6</option>
+                <option value="7">Class 7</option>
+                <option value="8">Class 8</option>
+                <option value="9">Class 9</option>
+                <option value="10">Class 10</option> -->
+                <option value="11">Class 11</option>
+                <option value="12">Class 12</option>
+            </select>
+        </div>
+        <div id="subjectSelectContainer" class="selector-container" style="display: none;">
+            <label for="subjectSelect">Select Subject:</label>
+            <select id="subjectSelect" onchange="showChapters()">
+                <option value="">Choose Subject</option>
+            </select>
+        </div>
+        <div id="chapterSelectContainer" class="selector-container" style="display: none;">
+            <label for="chapterSelect">Select Chapter:</label>
+            <select id="chapterSelect" onchange="showVideos()">
+                <option value="">Choose Chapter</option>
+            </select>
+        </div>
+        <div id="videoContainer" class="video-container" style="display: none;">
+            <h3>Chapter Videos:</h3>
+            <div id="videoList" class="video-list">
+                <!-- Dynamically loaded video thumbnails will appear here -->
+            </div>
+        </div>
+    </section>
+    <!--Resources and study material-->
+
+    <section id="resources" class="partition-fade-in">
+        <h2>Resources & Study Material</h2>
+        <div class="downloads">
+            <h3>Downloadable Material</h3>
+            <ul>
+                <li><a href="#" onclick="openResourceModal('PDFs')">PDFs</a></li>
+                <li><a href="#" onclick="openResourceModal('Worksheets')">Worksheets</a></li>
+                <li><a href="#" onclick="openResourceModal('Practice Problems')">Practice Problems</a></li>
+                <li><a href="#" onclick="openResourceModal('Test Papers')">Test Papers</a></li>
+                <li><a href="#" onclick="openResourceModal('PYQs')">PYQs</a></li>
+            </ul>
+        </div>
+    </section>
+    
+    <!-- Popup Modal -->
+    <div id="resourcePopup" class="popup">
+        <div class="popup-content">
+            <span class="close" onclick="closeResourceModal()">&times;</span>
+            <p id="popupMessage"></p>
+        </div>
+    </div>
+    
+    
+    <!-- Modal for Resources -->
+    <div id="resourceModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeResourceModal()">&times;</span>
+            <h2 id="resourceTitle"></h2>
+            <div id="resourceOptions" class="resource-options"></div>
+        </div>
+    </div>
+    
+
+    <!-- Test Papers Section -->
+    <section id="tests">
+        <h2 class="section-title">Test Papers</h2>
+        <p>Test Papers will be available soon!.</p>
+    </section>
+
+
+
+    <!-- advantage Section -->
+    <section class="advantage-section">
+        <h2>Key Advantages</h2>
+        <p>Excel with a structured learning approach and comprehensive support</p>
+    
+        <div class="card-container">
+            <div class="card">
+                <h3>📚 Learning Approach</h3>
+                
+                <li>Concept-driven and application-oriented teaching</li>
+                <li>Engaging and interactive classroom sessions</li>
+                <li>Balanced focus on academic and competitive exams</li>
+               
+            </div>
+    
+            <div class="card">
+                <h3>📖 Course Material</h3>
+                
+                    <li>Expert-curated and deeply analyzed content</li>
+                    <li>Structured and easy-to-understand study modules</li>
+                    <li>Updated as per the latest syllabus and exam trends</li>
+                
+            </div>
+    
+            <div class="card">
+                <h3>📝 Assessments & Progress Tracking</h3>
+                
+                    <li>In-depth test analysis with error identification</li>
+                    <li>Mock tests designed as per real exam standards</li>
+                    <li>Compete on a national scale with structured test series</li>
+                
+            </div>
+    
+            <div class="card">
+                <h3>❓ Doubt-Solving Support</h3>
+                
+                    <li>Personalized doubt-solving sessions with experts</li>
+                    <li>Step-by-step explanations for better understanding</li>
+                    <li>Instant resolution with detailed video solutions</li>
+                
+            </div>
+    
+            <div class="card">
+                <h3>📊 Performance & Feedback System</h3>
+                
+                    <li>Regular updates on progress and attendance</li>
+                    <li>Efficient query resolution and student support</li>
+                
+            </div>
+    
+            <div class="card">
+                <h3>🌍 Personalized Learning Support</h3>
+                    <li>Structured offline classes with a focused learning environment</li>
+                    <li>Regular in-person mentorship and guidance from experts</li>
+                    <li>Comprehensive study materials for self-paced practice</li>
+            </div>
+        </div>
+    </section>
+    
+    <!-- FAQ Section -->
+    <section id="faq" class="partition-fade-in">
+        <h2>Frequently Asked Questions:</h2>
+        <div class="faq-item">
+            <div class="faq-question">
+                ⁠What are the courses available at Star Academy?
+                <span class="faq-arrow">&#x25BC;</span>
+            </div>
+            <div class="faq-answer">
+                <p>Star Academy offers courses on foundation (class VI to XII) and engineering entrance examination like JEE (Main & Advanced). Along with JEE, we also offer specialised coaching for Boards exam (10th and 12th)</p>
+            </div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">
+                How do I find Star Academy centre?
+                <span class="faq-arrow">&#x25BC;</span>
+            </div>
+            <div class="faq-answer">
+                <p>The centre is located at Shani Mandir, Near Dashrathpuri metro gate no 1.</p>
+            </div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">
+                ⁠I have some questions regarding courses and the admission process. Can I talk to someone at Star Academy?
+                <span class="faq-arrow">&#x25BC;</span>
+            </div>
+            <div class="faq-answer">
+                <p>You can call us at (+91)-8102438480. Our admission assistance team will answer all your queries.</p>
+            </div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">
+                Why should I join Star Academy?
+                <span class="faq-arrow">&#x25BC;</span>
+            </div>
+            <div class="faq-answer">
+                <p>If you are looking for world class education at your doorstep in Dashrathpuri and do not want to travel to far away places like Janakpuri or Dwarka for quality education, please reach out to us.
+                    In order to provide a comprehensive coaching for students, we provide regular classes, exhaustive study material and regular tests to track the students’ performance.</p>
+            </div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">
+                ⁠Can I get a scholarship at Star Academy?
+                <span class="faq-arrow">&#x25BC;</span>
+            </div>
+            <div class="faq-answer">
+                <p>We provide up to 50% scholarship in tuition fees to economically weaker students based on merit. Please reach out to us on (+91)-8102438480 for more information.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section id="Feedback" class="feedback-form">
+        <h3>Feedback</h3>
+        <form action="https://formsubmit.co/Aditya.kumar271105@gmail.com" method="POST">
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message" rows="4" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+  <!-- Footer Section -->
+    <footer>
+        <ul>
+            <li>
+                <h3>About</h3>
+                <ul>
+                    <li><a href="#">About us</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">News</a></li>
+                    <li><a href="#">MyExam EduBlogs</a></li>
+                    <li><a href="#">Privacy policy</a></li>
+                    <li><a href="#">Public notice</a></li>
+                    <li><a href="#">Careers</a></li>
+                </ul>
+            </li>
+            <li>
+                <h3>Help & Support</h3>
+                <ul>
+                    <li><a href="#">FAQs</a></li>
+                    <li><a href="#">Contact us</a></li>
+                    <li><a href="#">Support</a></li>
+                    <li><a href="#">Examination info</a></li>
+                </ul>
+            </li>
+            <li>
+                <h3>Popular Goals</h3>
+                <ul>
+                    <li><a href="#">Engineering</a></li>
+                    <li><a href="#">Medical</a></li>
+                    <li><a href="#">Foundation Courses</a></li>
+                </ul>
+            </li>
+            <li>
+                <h3>Courses</h3>
+                <ul>
+                    <li><a href="#">Class 06</a></li>
+                    <li><a href="#">Class 07</a></li>
+                    <li><a href="#">Class 08</a></li>
+                    <li><a href="#">Class 09</a></li>
+                    <li><a href="#">Class 10</a></li>
+                    <li><a href="#">Class 11</a></li>
+                    <li><a href="#">Class 12</a></li>
+                    <li><a href="#">Crash Course</a></li>
+                </ul>
+            </li>
+            <li>
+                <h3>Centers</h3>
+                <ul>
+                    <li><a href="#">Delhi</a></li>
+                </ul>
+            </li>
+        </ul>
+        <div class="newsletter-signup">
+            <a href="#">Subscribe to our Newsletter</a>
+        </div>
+        <div class="quick-links">
+            <a href="#">Upcoming Batches</a> | 
+            <a href="#">Admission Process</a> | 
+            <a href="#">Student Login</a>
+        </div>
+        <div class="social-links">
+            <h3>Connect with Us</h3>
+            <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-youtube"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-whatsapp"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-telegram-plane"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+            <a href="mailto:info@staracademy.com" target="_blank"><i class="fas fa-envelope"></i></a>
+        </div>
+        <div class="contact-info">
+            <p>Address: A-12, shop no-3, Gali no-1, Dasrath Puri near shanni mandir, New Delhi-110045</p>
+            <p>Phone: ‪+91 81024 38480‬ | Email: info@staracademy.com</p>
+        </div>
+        <div class="back-to-top" onclick="window.scrollTo({ top: 0, behavior: 'smooth' });">
+            Back to top
+        </div>
+        <div class="footer-bottom">
+            copyright © 2025 Star Academy. All rights reserved. Developed By Aditya Kumar
+        </div>
+    </footer>
+    
+    <script src="script.js"></script>
+
+</body>
+</html>
